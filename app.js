@@ -16,9 +16,17 @@ document.getElementById('pin-generate').addEventListener('click', function(){
 })
 
 // calculator 
-document.getElementById('key-pad').addEventListener('click', function(event){
-   const eventNumber = event.target.innerText
-   const eventNumberShow = document.getElementById("number-display");
-   eventNumberShow.value = eventNumber;
-   
+document.getElementById('key-pad').addEventListener('click',function(Event){
+   const targetNumber = Event.target.innerText;
+   const displayNumber = document.getElementById("number-display");
+   const previousNumber = displayNumber.value;
+   if (isNaN(targetNumber)) {
+      if (targetNumber == 'C') {
+         displayNumber.value = '';
+      }
+   }
+  else{
+   displayNumber.value = previousNumber + targetNumber;
+  }
+
 })
