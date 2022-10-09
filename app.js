@@ -30,3 +30,19 @@ document.getElementById('key-pad').addEventListener('click',function(Event){
   }
 
 })
+
+function submitValue() {
+   const pinShow = document.getElementById("pin-show").value;
+   const displayNumber = document.getElementById("number-display").value;
+   const notifyFailed = document.getElementById('notify-failed');
+   const notifySuccess = document.getElementById('notify-success');
+   if (pinShow == displayNumber) {
+      notifyFailed.style.display = "none"
+      notifySuccess.style.display = "block"
+   }
+   else{
+      notifyFailed.style.display = "block"
+      notifySuccess.style.display = "none"
+   }
+
+}
